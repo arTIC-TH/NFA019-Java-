@@ -1,0 +1,2 @@
+Los archivos que se pueden trabajar aqui, permiten dedicarse a otras cosas, mientras se hace
+lo de la declaracion de los metodos y los componentes.
