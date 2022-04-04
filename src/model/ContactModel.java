@@ -7,9 +7,7 @@ public class ContactModel {
 	private String prenom;
 	private String email;
 	private String tel;
-/**
- * 
- */
+        
 	public ContactModel() {
 		this.id = 0;
 		this.nom = "";
@@ -90,5 +88,12 @@ public class ContactModel {
 	public void setTel(String tel) {
 		this.tel =tel;
 	}
+
+    @Override
+    public String toString() {
+        return "id : " + this.getId() + "nom : " + this.getNom() + "prenom : " + this.getPrenom() + "email : " + this.getEmail() + "tel : " + this.getTel(); //To change body of generated methods, choose Tools | Templates.
+    }
+        
+        
 	
 }

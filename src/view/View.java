@@ -21,9 +21,6 @@ import java.awt.List;
 import javax.swing.JEditorPane;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
 import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import java.awt.CardLayout;
@@ -36,14 +33,12 @@ import javax.swing.GroupLayout.Alignment;
 public class View {
 
 	public JFrame frame;
-	public JTextField textField;
-	public JTextField textField_1;
-	public JTextField textField_2;
-	public JTextField textField_3;
+	public JTextField textFieldNom;
+	public JTextField textFieldPrenom;
+	public JTextField textFieldMail;
+	public JTextField textFieldTel;
 	private JList list;
 	private JButton BtnAjouter;
-	
-	
 
 	/**
 	 * Launch the application.
@@ -73,7 +68,7 @@ public class View {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 694, 546);
+		frame.setBounds(100, 100, 894, 546);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -86,9 +81,9 @@ public class View {
 		panel.setLayout(new GridLayout(0, 2, 20, 20));
 		panel.add(lblNewLabel);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		panel.add(textField_1);
+		textFieldNom = new JTextField();
+		textFieldNom.setColumns(10);
+		panel.add(textFieldNom);
 		
 		JLabel lblNewLabel_1 = new JLabel("Prenom:");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -97,25 +92,25 @@ public class View {
 		// >Funcion adjuntar contacto
 		BtnAjouter = new JButton("Ajouter");
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		panel.add(textField_2);
+		textFieldPrenom = new JTextField();
+		textFieldPrenom.setColumns(10);
+		panel.add(textFieldPrenom);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Email:");
 		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_1_1);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		panel.add(textField);
+		textFieldMail = new JTextField();
+		textFieldMail.setColumns(10);
+		panel.add(textFieldMail);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Tel:");
 		lblNewLabel_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_1_1_1);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		panel.add(textField_3);
+		textFieldTel = new JTextField();
+		textFieldTel.setColumns(10);
+		panel.add(textFieldTel);
 		panel.add(BtnAjouter);
 		
 		JButton BtnModifier = new JButton("Modifier");
@@ -149,7 +144,7 @@ public class View {
 		panel.add(label_6);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(340, 0, 340, 509);
+		scrollPane.setBounds(340, 0, 540, 809);
 		frame.getContentPane().add(scrollPane);
 		
 		list = new JList();
@@ -172,7 +167,36 @@ public class View {
 		this.list = list;
 	}
 
+    public JTextField getTextFieldNom() {
+        return textFieldNom;
+    }
 
+    public void setTextFieldNom(JTextField textFieldNom) {
+        this.textFieldNom = textFieldNom;
+    }
+
+    public JTextField getTextFieldPrenom() {
+        return textFieldPrenom;
+    }
+
+    public void setTextFieldPrenom(JTextField textFieldPrenom) {
+        this.textFieldPrenom = textFieldPrenom;
+    }
+
+    public JTextField getTextFieldMail() {
+        return textFieldMail;
+    }
+
+    public void setTextFieldMail(JTextField textFieldMail) {
+        this.textFieldMail = textFieldMail;
+    }
+
+    public JTextField getTextFieldTel() {
+        return textFieldTel;
+    }
+
+    public void setTextFieldTel(JTextField textFieldTel) {
+        this.textFieldTel = textFieldTel;
+    }
 	
-
 }
