@@ -4,17 +4,17 @@ import java.io.*;
 import java.sql.*;
 import java.util.*;
 
-//class de connexion avec la basse de donne�s
+//class de connexion avec la basse de donnes
 public class Maconnexion {
 
 	private static String dbURL = "jdbc:mysql://localhost:3306/bdcontact";
 	private static String user = "root";
-	private static String password = "system";
+	private static String password = "770829-Terol";
 	private static Connection connexion = null;
 			
 
 	/**
-	 * Contructeur par d�faut
+	 * Contructeur par defaut
 	 */
 			
 	public Maconnexion() {
@@ -22,7 +22,7 @@ public class Maconnexion {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			connexion = DriverManager.getConnection(dbURL, user, password);
-			System.out.println("Conect�e ok!");
+			System.out.println("Conection ok!");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

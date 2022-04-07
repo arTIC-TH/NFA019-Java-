@@ -45,6 +45,10 @@ public class Controller {
      */
     private void initController() {
         vue.getBtnNewButton_1().addActionListener(ActionEvent -> ajouterContact());
+		// codigo prof vue.getBtnAjouter().addActionListener(ActionEvent -> ajouterContact());
+		vue.getList().addListSelectionListener(ListSlectionEvent -> selectionnerContact());
+		// verificar el nombre del boton
+		vue.getBtnModifier().addActionListener(ActionEvent -> modifierContact());
 
     }
 
@@ -65,10 +69,48 @@ public class Controller {
 
         arrayContacts = contactDao.getAllContacts();
         vue.getList().setListData(arrayContacts.toArray());
+        
+    }
+    
+    
+    private void selectionnerContact() {
+    	int index = vue.getList().getSelectedIndex();
+    	if (index == -1)
+		return;
 
-        /*vue.getLblMessage().setText("Contact ajouté");
-        vue.getLbID_2().setText(modele.getId() + "");*/
+    	ContactModel modele = (ContactModel) arrayContacts.get(index);
+
+    	vue.getLabelID().setText(modele.getId() + "");
+    	vue.getTextFieldNom().setText(modele.getNom());
+    	vue.getTextFieldPrenom().setText(modele.getPrenom());
+    	vue.getTextFieldMail().setText(modele.getEmail());
+    	vue.getTextFieldTel().setText(modele.getTel());
 
     }
 
-}
+    private void modifierContact() {
+
+    	// revisar el objeto en VIEW y como llamar el ID
+    	String idcontact = vue.getLabelID().getText();
+    	int contactId = Integer.parseInt(idcontact);
+    	String nom = vue.getTextFieldNom().getText();
+        String prenom = vue.getTextFieldPrenom().getText();
+        String email = vue.getTextFieldMail().getText();
+        String tel = vue.getTextFieldTel().getText();
+
+        modele = new ContactModel();
+        modele.setId(contactId);
+        modele.setNom(nom);
+        modele.setPrenom(prenom);
+        modele.setEmail(email);
+        modele.setTel(tel);
+        contactDao.modifierContact(modele);
+        
+        arrayContacts = contactDao.getAllContacts();
+        vue.getList().setListData(arrayContacts.toArray());
+
+    }
+
+
+    }
+

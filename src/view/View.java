@@ -7,6 +7,8 @@ import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
 import java.awt.FlowLayout;
+
+import javax.swing.AbstractButton;
 import javax.swing.BoxLayout;
 import java.awt.Panel;
 import java.awt.event.ActionListener;
@@ -39,6 +41,8 @@ public class View {
 	public JTextField textFieldTel;
 	private JList list;
 	private JButton BtnAjouter;
+	private JButton BtnModifier;
+	private JLabel labelID ;
 
 	/**
 	 * Launch the application.
@@ -113,7 +117,7 @@ public class View {
 		panel.add(textFieldTel);
 		panel.add(BtnAjouter);
 		
-		JButton BtnModifier = new JButton("Modifier");
+		BtnModifier = new JButton("Modifier");
 		panel.add(BtnModifier);
 		
 		JButton BtnSupprimer = new JButton("Supprimer");
@@ -122,8 +126,8 @@ public class View {
 		JButton btnSupprimer = new JButton("Effacer");
 		panel.add(btnSupprimer);
 		
-		JLabel label = new JLabel("");
-		panel.add(label);
+		labelID = new JLabel("");
+		panel.add(labelID);
 		
 		JLabel label_1 = new JLabel("");
 		panel.add(label_1);
@@ -198,5 +202,18 @@ public class View {
     public void setTextFieldTel(JTextField textFieldTel) {
         this.textFieldTel = textFieldTel;
     }
+
+	public JLabel getLabelID() {
+		return labelID;
+	}
+
+	public void setLabelID(JLabel labelID) {
+		this.labelID = labelID;
+	}
+
+	public AbstractButton getBtnModifier() {
+		// TODO Auto-generated method stub
+		return BtnModifier;
+	}
 	
 }

@@ -39,6 +39,23 @@ public class ContactDAO {
         }
     }
 
+    public void modifierContact(ContactModel contM) {
+        try {
+            PreparedStatement preparedStatement = conn
+                    .prepareStatement("update contacts set nom_cont=?,prenom_cont=?,email_cont=?,tel_cont=?" + "where id_cont=?");
+
+            preparedStatement.setString(1, contM.getNom());
+            preparedStatement.setString(2, contM.getPrenom());
+            preparedStatement.setString(3, contM.getEmail());
+            preparedStatement.setString(4, contM.getTel());
+            preparedStatement.setInt(5, contM.getId());
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
     public ArrayList<ContactModel> getAllContacts() {
 
         ArrayList<ContactModel> contMListe = new ArrayList<ContactModel>();

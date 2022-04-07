@@ -91,7 +91,11 @@ public class ContactModel {
 
     @Override
     public String toString() {
-        return "id : " + this.getId() + "nom : " + this.getNom() + "prenom : " + this.getPrenom() + "email : " + this.getEmail() + "tel : " + this.getTel(); //To change body of generated methods, choose Tools | Templates.
+        //return "id : " + this.getId() + ", nom : " + this.getNom() + ", prenom : " + this.getPrenom() + ", email : " + this.getEmail() + ", tel : " + this.getTel(); 
+        //To change body of generated methods, choose Tools | Templates.
+        return "," + this.getId() + "," + this.getNom() + "," + this.getPrenom() + "," + this.getEmail() + "," + this.getTel(); 
+        //To change body of generated methods, choose Tools | Templates.
+ 
     }
         
         
